@@ -4,8 +4,10 @@
   --primary-100: #f4ebff;
   --primary-300: #d6bbfb;
   --primary-700: #6941c6;
+  --gray-100: #f2f4f7;
   --gray-300: #d0d5dd;
   --gray-500: #667085;
+  --gray-600: #475467;
   --gray-900: #101828;
 
   --bradius: 8px;
@@ -24,17 +26,20 @@
   outline: none;
 }
 
-main {
+.container {
   max-width: 400px;
   width: 100%;
   margin: 0 auto;
   padding: 0.75rem 0.5rem;
 }
 
-form {
+.flex-column {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+}
+
+form {
   margin-bottom: 1rem;
 }
 
@@ -65,6 +70,7 @@ button {
   border-radius: var(--bradius);
   padding: var(--padding-md);
   transition: var(--transition);
+  box-shadow: var(--shadow-xs);
   font-weight: 600;
   font-size: 14px;
   line-height: 20px;
@@ -98,4 +104,25 @@ button {
 .ghost:focus {
   background-color: var(--primary-50);
   box-shadow: var(--focus-shadow);
+}
+
+footer p {
+  border-radius: var(--bradius);
+  padding: var(--padding-md);
+  background-color: var(--gray-100);
+}
+
+#result {
+  color: var(--gray-900);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+#solution {
+  color: var(--gray-600);
+}
+
+.display-none {
+  display: none;
 }
