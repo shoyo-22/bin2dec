@@ -35,7 +35,7 @@ function showSolution(input, output) {
   let solution = "";
 
   for (let i = 0; i < input.length; i++) {
-    solution += `${input[i]}&times;2<sup>${input.length - i}</sup>`;
+    solution += `${input[i]}&times;2<sup>${input.length - (i + 1)}</sup>`;
 
     if (i !== input.length - 1) {
       solution += " + ";
