@@ -9,6 +9,9 @@
   --gray-500: #667085;
   --gray-600: #475467;
   --gray-900: #101828;
+  --error-25: #fffbfa;
+  --error-300: #fda29b;
+  --error-700: #b42318;
 
   --bradius: 8px;
   --padding-md: 10px 14px;
@@ -26,7 +29,7 @@
   outline: none;
 }
 
-.container {
+body {
   max-width: 400px;
   width: 100%;
   margin: 0 auto;
@@ -125,4 +128,16 @@ footer p {
 
 .display-none {
   display: none;
+}
+
+.notify {
+  position: absolute;
+  display: flex;
+  flex-grow: 2;
+  bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--error-300);
+  border-radius: var(--bradius);
+  background-color: var(--error-25);
+  color: var(--error-700);
 }

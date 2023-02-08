@@ -8,11 +8,15 @@ const clearBtn = document.getElementById("clear");
 convertForm.onsubmit = (event) => {
   event.preventDefault();
 
-  let result = binToDecCalculate(binaryNumber.value);
+  if (binaryNumber.value) {
+    let result = binToDecCalculate(binaryNumber.value);
 
-  footer.classList.remove("display-none");
-  resultSection.textContent = `Result: ${result}`;
-  showSolution(binaryNumber.value, result);
+    footer.classList.remove("display-none");
+    resultSection.textContent = `Result: ${result}`;
+    showSolution(binaryNumber.value, result);
+  } else {
+    showError("Input field can not be empty");
+  }
 };
 
 clearBtn.onclick = () => {
@@ -42,6 +46,18 @@ function showSolution(input, output) {
     }
   }
 
-  solutionSection.innerHTML = 
-    `<strong>Solution:</strong> <br />${input}<sub>2</sub> = ${solution} = ${output}<sub>10</sub>`;
+  solutionSection.innerHTML = `<strong>Solution:</strong> <br />${input}<sub>2</sub> = ${solution} = ${output}<sub>10</sub>`;
+}
+
+function showError(text) {
+  const body = document.querySelector("body");
+  const notify = document.createElement("div");
+
+  notify.classList.add("notify");
+  notify.textContent = text;
+  
+  body.appendChild(notify);
+  setTimeout(() => {
+    notify.style.display = "none";
+  }, 3000);
 }
