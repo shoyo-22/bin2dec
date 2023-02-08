@@ -7,13 +7,18 @@ const clearBtn = document.getElementById("clear");
 
 convertForm.onsubmit = (event) => {
   event.preventDefault();
+  const pattern = /^[01]+$/;
 
   if (binaryNumber.value) {
-    let result = binToDecCalculate(binaryNumber.value);
+    if (pattern.test(binaryNumber.value)) {
+      let result = binToDecCalculate(binaryNumber.value);
 
-    footer.classList.remove("display-none");
-    resultSection.textContent = `Result: ${result}`;
-    showSolution(binaryNumber.value, result);
+      footer.classList.remove("display-none");
+      resultSection.textContent = `Result: ${result}`;
+      showSolution(binaryNumber.value, result);
+    } else {
+      showError("Input field must containt only 0's and 1's");
+    }
   } else {
     showError("Input field can not be empty");
   }
@@ -55,7 +60,7 @@ function showError(text) {
 
   notify.classList.add("notify");
   notify.textContent = text;
-  
+
   body.appendChild(notify);
   setTimeout(() => {
     notify.style.display = "none";

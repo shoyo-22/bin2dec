@@ -109,6 +109,10 @@ button {
   box-shadow: var(--focus-shadow);
 }
 
+footer {
+  margin-top: 1rem;
+}
+
 footer p {
   border-radius: var(--bradius);
   padding: var(--padding-md);
