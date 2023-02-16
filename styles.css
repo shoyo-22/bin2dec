@@ -12,6 +12,7 @@
   --gray-600: #475467;
   --gray-900: #101828;
   --error-25: #fffbfa;
+  --error-100: #fee4e2;
   --error-300: #fda29b;
   --error-700: #b42318;
 
@@ -19,6 +20,7 @@
   --padding-md: 10px 14px;
   --shadow-xs: 0 1px 2px rgba(16, 24, 40, 0.05);
   --focus-shadow: var(--shadow-xs), 0 0 0 4px var(--primary-100);
+  --focus-error: var(--shadow-xs), 0 0 0 4px var(--error-100);
   --transition: all 0.3s ease-in-out;
 }
 
@@ -68,6 +70,9 @@ input {
   background-color: var(--white);
   box-shadow: var(--shadow-xs);
   transition: var(--transition);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
 }
 
 input::placeholder {
@@ -94,32 +99,32 @@ button {
   line-height: 20px;
 }
 
-.secondary {
-  border: 1px solid var(--primary-300);
+.secondary-error {
+  border: 1px solid var(--error-300);
   background-color: var(--white);
-  color: var(--primary-700);
+  color: var(--error-700);
 }
 
-.secondary:hover {
-  background-color: var(--primary-50);
+.secondary-error:hover {
+  background-color: var(--error-25);
 }
 
-.secondary:focus {
+.secondary-error:focus {
   background-color: unset;
-  box-shadow: var(--focus-shadow);
+  box-shadow: var(--focus-error);
 }
 
-.ghost {
+.ghost-primary {
   border: 1px solid var(--primary-50);
   background-color: var(--primary-50);
   color: var(--primary-700);
 }
 
-.ghost:hover {
+.ghost-primary:hover {
   background-color: var(--primary-100);
 }
 
-.ghost:focus {
+.ghost-primary:focus {
   background-color: var(--primary-50);
   box-shadow: var(--focus-shadow);
 }
