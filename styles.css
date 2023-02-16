@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
 
 :root {
   --white: #ffffff;
@@ -31,7 +31,7 @@
   margin: 0;
   padding: 0;
   outline: none;
-  font-family: 'Inter';
+  font-family: "Inter";
 }
 
 header {
@@ -154,14 +154,27 @@ footer p {
   display: none;
 }
 
-.notify {
+#notifications {
   position: absolute;
-  display: flex;
-  flex-grow: 2;
   bottom: 1rem;
-  padding: 1rem;
+}
+
+.notify {
+  width: 100%;
+  padding: 0.75rem;
   border: 1px solid var(--error-300);
   border-radius: var(--bradius);
   background-color: var(--error-25);
   color: var(--error-700);
+  animation: fadein 3s linear forwards;
+}
+
+@keyframes fadein {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
 }

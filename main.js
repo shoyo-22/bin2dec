@@ -55,14 +55,14 @@ function showSolution(input, output) {
 }
 
 function showError(text) {
-  const body = document.querySelector("body");
+  const notificationContainer = document.getElementById("notifications");
   const notify = document.createElement("div");
 
   notify.classList.add("notify");
   notify.textContent = text;
 
-  body.appendChild(notify);
+  notificationContainer.appendChild(notify);
   setTimeout(() => {
-    notify.style.display = "none";
+    notify.remove();
   }, 3000);
 }
