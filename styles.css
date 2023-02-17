@@ -32,6 +32,7 @@
   padding: 0;
   outline: none;
   font-family: "Inter";
+  -webkit-tap-highlight-color: transparent;
 }
 
 header {
@@ -166,10 +167,10 @@ footer p {
   border-radius: var(--bradius);
   background-color: var(--error-25);
   color: var(--error-700);
-  animation: fadein 3s linear forwards;
+  animation: fadeinout 3s linear forwards;
 }
 
-@keyframes fadein {
+@keyframes fadeinout {
   0%,
   100% {
     opacity: 0;
